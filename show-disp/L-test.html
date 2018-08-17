@@ -1,0 +1,15 @@
+<script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+<script src="https://rawgit.com/jeromeetienne/ar.js/master/aframe/build/aframe-ar.js"></script>
+<script>THREEx.ArToolkitContext.baseURL = 'https://rawgit.com/jeromeetienne/ar.js/master/three.js/'</script>
+<body style='margin : 0px; overflow: hidden;'>
+	<a-scene embedded artoolkit='sourceType: webcam;'>
+		<a-assets>
+      			<a-asset-item id="crate-obj" src="megan-models/ARTest_L1.obj"></a-asset-item>
+      			<a-asset-item id="crate-mtl" src="megan-models/ARTest_L1.obj.mtl"></a-asset-item>
+    		</a-assets>
+    		<!-- Using the asset management system. -->
+    		<a-obj-model src="#crate-obj" mtl="#crate-mtl" scale="0.01 0.01 0.01"></a-obj-model>
+		<!--<a-text value="WHOA mama" position="0 0 .1"></a-text>-->
+		<a-marker-camera preset='hiro'></a-marker-camera>
+	</a-scene>
+</body>
