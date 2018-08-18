@@ -1,26 +1,31 @@
 <!DOCTYPE html>
-<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-<script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
-<script src="../AR.js/aframe/aframe-ar.js"></script>
-<!-- three.js library -->
-<script src='../AR.js/three.js/examples/vendor/three.js/build/three.js'></script>
-<!-- jsartookit -->
-<script src="../AR.js/three.js/vendor/jsartoolkit5/build/artoolkit.min.js"></script>
-<script src="../AR.js/three.js/vendor/jsartoolkit5/js/artoolkit.api.js"></script>
-<!-- include threex.artoolkit -->
-<script src="../AR.js/three.js/threex-artoolkitsource.js"></script>
-<script src="../AR.js/three.js/threex-artoolkitcontext.js"></script>
-<script src="../AR.js/three.js/threex-armarkercontrols.js"></script>
-<script>THREEx.ArToolkitContext.baseURL = '../AR.js/three.js/'</script>
-
-<body style='margin : 0px; overflow: hidden;'>
-	<a-scene embedded artoolkit='sourceType: webcam;'>
-		<a-assets>
-      			<a-asset-item id="poster-obj" src="megan-models/postermodel_vectortri2.obj"></a-asset-item>
-      			<a-asset-item id="poster-mtl" src="megan-models/postermodel_vectortri2.mtl"></a-asset-item>
-    		</a-assets>
-    		<!-- Using the asset management system. -->
-                <a-obj-model src="#poster-obj" mtl="#poster-mtl" scale='2.33 2.33 2.33' position="0.04 0.02 0.045" rotation="-45 0 0"></a-obj-model>
-		<a-marker-camera preset='poster'></a-marker-camera>
-	</a-scene>
-</body>
+<html>
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+    <script src="../AR.js/aframe/build/aframe-ar.js"></script>
+    <!-- three.js library -->
+    <script src='../AR.js/three.js/examples/vendor/three.js/build/three.js'></script>
+    <!-- jsartookit -->
+    <script src="../AR.js/three.js/vendor/jsartoolkit5/build/artoolkit.min.js"></script>
+    <script src="../AR.js/three.js/vendor/jsartoolkit5/js/artoolkit.api.js"></script>
+    <!-- include threex.artoolkit -->
+    <script src="../AR.js/three.js/src/threex/threex-artoolkitsource.js"></script>
+    <script src="../AR.js/three.js/src/threex/threex-artoolkitcontext.js"></script>
+    <script src="../AR.js/three.js/src/threex/threex-armarkercontrols.js"></script>
+    <script>THREEx.ArToolkitContext.baseURL = '../AR.js/three.js/'</script>
+    
+    
+    <body style='margin : 0px; overflow: hidden;'>
+    <a-scene embedded arjs>
+        <a-assets>
+            <a-asset-item id="poster-obj" src="../models/BW.obj"></a-asset-item>
+            <a-asset-item id="poster-mtl" src="../models/BW.mtl"></a-asset-item>
+        </a-assets>
+        
+        <a-marker preset="hiro">
+            <a-obj-model src="#poster-obj" mtl="#poster-mtl" scale='2.33 2.33 2.33' position="0.04 0.02 0.045" rotation="-45 0 0"></a-obj-model>
+        </a-marker>
+        <a-entity camera></a-entity>
+    </a-scene>
+    </body>
+</html>
